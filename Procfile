@@ -1,1 +1,1 @@
-web: gunicorn app:matsuHub
+web: gunicorn app:app
