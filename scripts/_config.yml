@@ -1,6 +1,6 @@
 SETTINGS:
-  HOST: 127.0.0.1
-  PORT: 4000
+  HOST: https://matsuhub.herokuapp.com/
+  PORT: 80
 
 SERVICES:
   youtube_downloads:
