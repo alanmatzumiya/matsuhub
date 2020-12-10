@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="784px" viewBox="0 0 1440 784" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Path 16</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="76.735862%" y1="38.0398925%" x2="10.5994899%" y2="52.9117537%" id="linearGradient-1">
+            <stop stop-color="#ff6969" offset="0%"></stop>
+            <stop stop-color="#8B0000" stop-opacity="0.2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.199999988">
+        <g id="Pricing-Plan" transform="translate(0.000000, -1897.000000)" fill="url(#linearGradient-1)">
+            <path d="M-3.13696068,1897 C178.834616,1947.78972 359.806349,1960.48715 539.778238,1935.09229 C809.736071,1897 1265.66486,1877.46549 1436.63815,2000.53289 C1550.62035,2082.57782 1550.45371,2305.59679 1436.13823,2669.58978 C1205.50759,2696.93809 974.543662,2675.12455 743.246456,2604.14918 C396.300648,2497.68611 151.338911,2689.12429 -3.6368826,2623.68368 C-106.954078,2580.05662 -106.787437,2337.82872 -3.13696068,1897 Z" id="Path-16"></path>
+        </g>
+    </g>
+</svg>

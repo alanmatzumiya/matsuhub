@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ libs['css'] }}" rel="stylesheet">
+    <link rel="icon" href="{{ libs['img'] + '/favicon.ico' }}">
+    <title>{{ title }}</title>
+  </head>
+  <body data-role="gradient-box"
+        data-gradient-type="radial"
+        data-gradient-size="farthest-corner"
+        data-gradient-position="40px 40px"
+        data-gradient-colors="#f35 0%, #43e 100%">
+  <header>
+  <h2 class="header pl-4-md pr-4-md fg-lightGray float-left">MATSUHUB</h2>
+  <input class="fg-lightGray pl-4-md pr-4-md float-right" type="checkbox" data-role="switch" data-caption="Light mode">
+  </header>
+  <div class="fg-cyan" data-role="navview" data-compact="md" data-expand="lg" data-toggle="#pane-toggle" data-active-state="true">
+    <nav class="navview-pane bg-dark">
+    <button class="pull-button fg-cyan">
+    <span class="mif-menu"></span>
+    </button>
+        <div class="suggest-box">
+            <input class="bg-lightGray" type="text" data-role="input" data-clear-button="false" data-search-button="true">
+            <button class="holder">
+                <span class="mif-search fg-cyan"></span>
+            </button>
+        </div>
+        <ul class="navview-menu bg-dark">
+            <li class="active">
+                <a href="{{routes['home']}}">
+                    <span class="icon"><span class="mif-home"></span></span>
+                    <span class="caption">Home</span>
+                </a>
+            </li>
+            <li class="item-separator"></li>
+            <li class="item-header">Main pages</li>
+            <li><a href="{{routes['apps']}}">
+                <span class="icon"><span class="mif-apps"></span></span>
+                <span class="caption">Apps</span>
+            </a>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle">
+                    <span class="icon"><span class="mif-rocket"></span></span>
+                    <span class="caption">Media</span>
+                </a>
+                <ul class="navview-menu" data-role="dropdown">
+                    <li>
+                        <a href="{{routes['images']['root']}}">
+                            <span class="icon"><span class="mif-images"></span></span>
+                            <span class="caption">Fotos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{routes['music']}}">
+                            <span class="icon"><span class="mif-film"></span></span>
+                            <span class="caption">Musica</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-separator"></li>
+            <li>
+                <a href="{{routes['documents']}}">
+                    <span class="icon"><span class="mif-folder"></span></span>
+                    <span class="caption">Documentos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+      <div class="navview-content pl-4-md pr-4-md bg-dark fg-lightGray">
+          <div data-role="row" data-expand="lg">
+              <input class="bg-lightGray fg-dark" data-role="timepicker" data-value="13:01:23" data-ok-button-icon="<span class='mif-checkmark'></span>" data-cancel-button-icon="<span class='mif-cross'></span>">
+          </div>
+          {% block content %} {% endblock %}
+      </div>
+</div>
+  <script src="{{ libs['js'] }}"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="cell-md-8">
+        <div class="slide" style="height: 200%;">
+            <hr class="thin mt-4 mb-4 bg-lightGray">
+            <h3 id='play-song'> {{ files[0].replace('.mp4', '') }} </h3>
+            <hr class="thin mt-4 mb-4 bg-lightGray">
+            <video class="fg-cyan" id="play-media"
+               data-height="550px"
+               data-aspect-ratio="hd"
+               data-role="video-player"
+               data-loop-icon="<span class='mif-loop2 fg-cyan'></span>"
+               data-mute-icon="<span class='mif-volume-mute2 fg-cyan'></span>"
+               data-volume-low-icon="<span class='mif-volume-low fg-cyan'></span>"
+               data-volume-medium-icon="<span class='mif-volume-medium fg-cyan'></span>"
+               data-volume-high-icon="<span class='mif-volume-high fg-cyan'></span>"
+               data-play-icon="<img src='../static/lib/img/images/play-icon.png'>"
+               data-stop-icon="<img src='../static/lib/img/images/player_stop.png'>"
+               data-src="../static/home/music/{{ files[0] }}">
+            </video>
+        </div>
+    </div>
+    <div class="cell-md-4">
+        <table class="table table-no-border row-hover bg-dark fg-cyan"
+               data-role="table" data-static-view="false"
+               data-cls-table-top="row flex-nowrap"
+               data-cls-search="cell-md-8"
+               data-cls-rows-count="cell-md-4"
+               data-rows="5"
+               data-rows-steps="5, 10"
+               data-show-activity="false">
+            <thead>
+            <tr>
+                <th class="bg-dark fg-cyan">
+                    <input type="checkbox" data-role="switch" data-caption="Reproduccion Automatica" checked title="">
+                    <input type="checkbox" data-role="switch" data-caption="Reproduccion Aleatoria" title="">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for file in files %}
+            <tr>
+                <td>
+                    <input type="button" style="border: 5px solid gray; margin: 0; padding: 10px; width: 100%; height: 100%;"
+                           class="button bg-dark fg-cyan" value="{{file.replace('.mp4', '')}}" onclick="test(value)">
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+function test(val) {
+  var songPlay = document.getElementById("play-song");
+  document.getElementById("play-media").setAttribute("src", "../static/home/music/" + val + ".mp4");
+  songPlay.innerHTML = val;
+  }
+</script>
+{% endblock %}
+

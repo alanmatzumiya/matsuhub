@@ -1,0 +1,73 @@
+1607167362310	geckodriver	INFO	Listening on 127.0.0.1:55521
+1607167363277	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1aoODH"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607167376658	Marionette	INFO	Listening on port 41675
+1607167376828	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607167385246	Marionette	INFO	Stopped listening on port 41675
+1607221135712	geckodriver	INFO	Listening on 127.0.0.1:48319
+1607221136713	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileB2GAQR"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607221153687	Marionette	INFO	Listening on port 36595
+1607221153828	Marionette	WARN	TLS certificate errors will be ignored for this session
+Error reading incoming packet: (Error: No packet types for header: GET / HTTP/1.1
+User-Agent: - _processIncoming@chrome://marionette/content/transport.js:418:17
+onInputStreamReady@chrome://marionette/content/transport.js:372:14
+)
+
+###!!! [Parent][RunMessage] Error: Channel error: cannot send/recv
+
+1607224510135	Marionette	INFO	Stopped listening on port 36595
+1607224522868	geckodriver	INFO	Listening on 127.0.0.1:59817
+1607224523868	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebbrL6r"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607224533303	Marionette	INFO	Listening on port 33851
+1607224533588	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+1607224655020	Marionette	INFO	Stopped listening on port 33851
+1607225044711	geckodriver	INFO	Listening on 127.0.0.1:40657
+1607225044797	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilev6MJMQ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607225051756	Marionette	INFO	Listening on port 36695
+1607225051832	Marionette	WARN	TLS certificate errors will be ignored for this session
+Error reading incoming packet: (Error: No packet types for header: GET / HTTP/1.1
+User-Agent: - _processIncoming@chrome://marionette/content/transport.js:418:17
+onInputStreamReady@chrome://marionette/content/transport.js:372:14
+)
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 280: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+Error reading incoming packet: (Error: No packet types for header: GET / HTTP/1.1
+User-Agent: - _processIncoming@chrome://marionette/content/transport.js:418:17
+onInputStreamReady@chrome://marionette/content/transport.js:372:14
+)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

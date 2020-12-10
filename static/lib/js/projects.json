@@ -1,0 +1,18 @@
+{
+  "description" : "You can consult on GitHub some of my programming projects that are being developed, which aim to collect all the practices in the Python language and obtain as a result something useful such as Python packages, and educational guides for beginners or advanced users in the use of this language.",
+  "traduction" : "Puedes consultar en GitHub algunos de mis proyectos de programación que están siendo desarrollados, los cuales tienen como objetivo reunir todas las practicas en el lenguaje Python y obtener como resultado algo útil como paquetes Python, y guías educativas para usuarios principiantes o avanzados en el uso de este lenguaje.",
+  "projects" : [
+    {
+      "name" : "pySpectralFPK",
+      "readme" : "nothing"
+    },
+    {
+      "name" : "pySpectralPDE",
+      "readme" : "nothing"
+    },
+    {
+      "name" : "Python Courses",
+      "readme" : "nothing"
+    }
+  ]
+}

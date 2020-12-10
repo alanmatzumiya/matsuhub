@@ -1,0 +1,31 @@
+SETTINGS:
+  HOST: 127.0.0.1
+  PORT: 4000
+
+SERVICES:
+  youtube_downloads:
+     assignature: "wait"
+  file_orders:
+     assignature: "wait"
+  nav_browsers:
+     assignature: "wait"
+
+LIBS:
+  css-route: "static/lib/metro/css"
+  js-route: "static/lib/metro/js"
+  css: "static/lib/metro/css/metro-all.css"
+  js: "static/lib/metro/js/metro.js"
+  img: "static/lib/img"
+   
+ROUTES:
+  base: '/'
+  login: '/login'
+  home: '/home'
+  apps: '/apps'
+  documents: '/home/documents'
+  music: '/home/music'
+  images:
+    root: '/home/images'
+    family: '/home/images/family'
+    doggys: '/home/images/doggys'
+    partys: '/home/images/partys'

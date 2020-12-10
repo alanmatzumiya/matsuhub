@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul data-role="listview" data-view="icons-medium">
+    <li data-caption="Folders">
+        <ul class="bg-dark fg-white">
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Music"></li>
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Images"></li>
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Documents"></li>
+        </ul>
+    </li>
+    <li data-caption="Devices and disks">
+        <ul class="bg-dark fg-white">
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS1 (C:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS2 (D:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS3 (E:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS4 (G:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS5 (H:)"></li>
+        </ul>
+    </li>
+</ul>
+<table class="table table-no-border row-hover"
+       data-role="table" data-static-view="true"
+       data-cls-table-top="row flex-nowrap"
+       data-cls-search="cell-md-8"
+       data-cls-rows-count="cell-md-4"
+       data-rows="5"
+       data-rows-steps="5, 10"
+       data-show-activity="false">
+    <thead>
+    <tr>
+        <th class="bg-white">
+            Archivos desde Dispositivo Seleccionado
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for file in files['documents'] %}
+    <tr>
+        <td>
+            <input type="button" style="border: 5px solid gray; margin: 0; padding: 10px; width: 100%; height: 100%;"
+                   class="button bg-dark fg-cyan" value="{{file}}" onclick="test(value)">
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="multi-action">
+    <button class="action-button rotate-minus bg-red fg-white"
+            onclick="$(this).toggleClass('active')">
+        <span class="icon"><span class="mif-plus"></span></span>
+    </button>
+    <ul class="actions drop-right">
+        <li class="bg-blue"><a href="#"><span class="mif-user-plus"></span></a></li>
+        <li class="bg-teal"><a href="#"><span class="mif-library"></span></a></li>
+        <li class="bg-pink"><a href="#"><span class="mif-alarm"></span></a></li>
+        <li class="bg-orange"><a href="#"><span class="mif-lock"></span></a></li>
+    </ul>
+</div>
+{% endblock %}

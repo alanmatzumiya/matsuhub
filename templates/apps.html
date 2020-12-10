@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> File Manager </h2>
+<ul data-role="listview" data-view="icons-medium">
+    <li data-caption="Folders">
+        <ul>
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Music"></li>
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Images"></li>
+            <li data-icon="<span class='mif-folder fg-cyan'>" data-caption="Documents"></li>
+        </ul>
+    </li>
+    <li data-caption="Devices and disks">
+        <ul>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS1 (C:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS2 (D:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS3 (E:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS4 (G:)"></li>
+            <li data-icon="{{ libs['img'] + '/images/disk.png' }}" data-caption="DS5 (H:)"></li>
+        </ul>
+    </li>
+</ul>
+<div class="row">
+    <span class="icon"><span class="mif-youtube"></span></span>
+    <span class="caption">ApiTube</span>
+</div>
+<form action="/youtube_downloads/" method="GET">
+    <div class="suggest-box;">
+        <input type="text" data-role="input" name=url data-clear-button="false" data-search-button="true">
+        <button type="submit" class="holder">
+            <span class="mif-search"></span>
+        </button>
+    </div>
+</form>
+<div class="container">
+<h2> File Uploader </h2>
+    <div class="row" style="margin-top: 2%;">
+        <div class="columns" style="margin-top: 2%;">
+            <h4>PDF Online View</h4>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 5%">
+        <div class="six columns">
+            <form action="/uploads" method="POST" enctype="multipart/form-data">
+                <input type="file" name="archivo">
+                <input type="submit" class="button-primary">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

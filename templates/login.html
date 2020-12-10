@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ libs['img'] + '/favicon.ico' }}" type="image/x-icon">
+    <link rel="icon" href="{{ libs['img'] + '/favicon.ico' }}" type="image/x-icon">
+    <link href="{{ libs['css'] }}" rel="stylesheet">
+
+    <title>Login</title>
+
+</head>
+
+<body class="h-vh-100 fg-brandColor2" style="background-color: #073642;">
+
+    <form action="" method="post" class="login-form bg-white p-6 mx-auto border bd-default win-shadow">
+        <span class="mif-vpn-lock mif-4x place-right" style="margin-top: -10px;"></span>
+        <h2 class="text-light">Login to service</h2>
+        <hr class="thin mt-4 mb-4 bg-white">
+        <div class="form-group">
+            <input type="text" name="username" value="{{ request.form.username }}" data-role="input" data-prepend="<span class='mif-envelop'>" placeholder="Enter your email..." data-validate="required email">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" value="{{ request.form.password }}" data-role="input" data-prepend="<span class='mif-key'>" placeholder="Enter your password..." data-validate="required minlength=6">
+        </div>
+        <div class="form-group mt-10">
+            <input type="checkbox" data-role="checkbox" data-caption="Remember me" class="place-right">
+            <input type="submit" class="button" value="Submit form">
+        </div>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }} </p>
+        {% endif %}
+
+     </form>
+  
+    <script src="{{ libs['js'] }}"></script>
+
+</body>
+</html>

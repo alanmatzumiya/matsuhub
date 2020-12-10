@@ -1,0 +1,24 @@
+{
+  "about" : 
+  {
+    "motivation" : "This site contains information about my experience and skills that define my professional profile, being a project that began as an initiative to expand my knowledge in web development, since I am constantly in practice using my programming skills.",
+    "content" : "In the [RESUME] section you can find my CV to download in PDF, in the same way it is possible to see the document right there along with a version of it on a web page. Also, in [BLOGS] you can find information about my personal blog, and if you want to know more about me, I have ideas and tools of my interest in the [Entertainment] section.",
+    "commentary" : [
+      "Self-study practices are part of my personal professional development, I have the pleasure of researching, developing and documenting my achievements",
+      "My best experience as a professional, and also as a personal one, is to understand that any human being in the right conditions can be able to train in a self-taught way, learn and develop skills to wait if he wants to; And self-motivation is a skill that certainly should not be lacking. The main key to achieve this, and in general for any type of objective, is discipline. Getting it is the most important step, and the next is to maintain it.",
+      "Although it sounds trivial, in reality, understanding its importance makes a difference since to achieve it it may be complicated for some and I include myself in this case. But it is possible, since a few years ago when I started my studies in the degree of Chemical Engineering, I could not understand the most basic knowledge of algebra, but my enthusiasm and my interest motivated me to try it, although initially my results were stumbling blocks and exams with rating of zero. Even so, I never backtracked and the end result was my degree in chemical engineering, and almost a degree in mathematics; however, I got a masters degree in mathematical science instead.",
+      "There is no better proof that almost anything is possible if we start with initiative, and perseverance until we achieve discipline."
+    ]
+  },
+  "traduction": 
+  {
+    "motivacion" : "Este sitio contiene información acerca de mi experiencia y habilidades que definen mi perfil profesional, siendo un proyecto que empezó como una iniciativa para extender mis conocimientos en desarrollo web, ya que me mantengo constantemente en la práctica usando mis habilidades de programación.",
+    "contenido" : "En la sección de [RESUMEN] puedes encontrar mi curriculum para descargarlo en PDF, de igual manera es posible visualizar allí mismo el documento junto con una versión de este en una página web. Ademas, puedes en [BLOG] encontrar información acerca mi blog personal, y si deseas conocer algo más de mí, tengo en la sección [Entretenimiento] ideas y herramientas de mí interés.",
+    "comentario" : [
+      "Las practicas de autoaprendizaje son parte de mi desarrollo profesional tanto personal, tengo el gusto de investigar, desarrollar y documentar mis logros.",
+      "Mi mejor experiencia como profesional, y ademas personal, es comprender que cualquier ser humano en las condiciones adecuadas puede ser capaz de formarse de manera autodidacta, aprender y desarrollar habilidades sorprendentes si se lo propone; y la automotivación es una habilidad que sin duda no debe faltar. La clave principal para lograrlo, y en general para cualquier tipo de objetivo, es la disciplina. Conseguirla es el paso más importante, y el siguiente es mantenerla.",
+      "Aunque suene trivial, en realidad, entender su importancia hace la diferencia ya que para conseguirla puede que para algunos sea complicado y me incluyo en este caso. Pero es posible, ya que hace algunos años al iniciar mis estudios en la licenciatura de Ingeniería Química, no lograba comprender los conocimientos más básicos del álgebra, pero mi entusiasmo y mi interés me motivo a intentarlo, aunque inicialmente mis resultados fueron tropiezos y exámenes con calificación de cero. Aun así, nunca di marcha atrás y el resultado final fue mí título de ingeniero químico, y por poco el de la licenciatura de matemáticas; sin embargo, en su lugar obtuve un grado de maestría en ciencias matemáticas.",
+      "No existe mejor prueba de que casi todo es posible si empezamos con iniciativa, y manteniendo perseverancia hasta lograr la disciplina."
+    ]
+  }
+}
