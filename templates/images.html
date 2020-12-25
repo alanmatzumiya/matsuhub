@@ -4,26 +4,39 @@
 <div class="cell-md-12 w-100">
 <div class="row">
 <div data-role="panel" class="mt-2 bg-dark fg-teal h-100">
-    <span class="branding-bar">Familia - 2003</span>
 <div class="cell-md-4">
+    <span class="branding-bar">Familia</span>
     <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in files['family']['2003'][0:6] %}
-      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% for j in range(5) %}
+      <img src="{{ files_path['family'] + '/2003/' + files['family']['2003'][j] }}"/>
+      <img src="{{ files_path['family'] + '/2003/' + files['family']['2003'][j+1] }}"/>
+      <img src="{{ files_path['family'] + '/2015/' + files['family']['2015'][j] }}"/>
+      <img src="{{ files_path['family'] + '/2015/' + files['family']['2015'][j+1] }}"/>
+      <img src="{{ files_path['family'] + '/2017/' + files['family']['2017'][j] }}"/>
       {% endfor %}
     </div>
+    <span class="branding-bar">Doggy's</span>
     <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in files['family']['2003'][6:12] %}
-      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% for k in range(5) %}
+      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k] }}"/>
+      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+1] }}"/>
+      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+2] }}"/>
+      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+3] }}"/>
+      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+4] }}"/>
       {% endfor %}
     </div>
+    <span class="branding-bar">Eventos</span>
     <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in files['family']['2003'][12:18] %}
-      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% for l in range(5) %}
+      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l] }}"/>
+      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+1] }}"/>
+      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+2] }}"/>
+      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+3] }}"/>
+      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+4] }}"/>
       {% endfor %}
     </div>
 </div>
 </div>
-
 <div class="mt-2 cell-md-8 card-container bg-dark fg-teal">
 <div data-role="carousel"
      data-cls-controls="fg-darkTeal"
@@ -41,50 +54,6 @@
         {% endfor %}
 </div>
 </div>
-</div>
-</div>
-
-<div class="cell-md-24">
-    <div class="row">
-    <div data-role="panel" class="bg-dark fg-teal">
-        <div class="cell-md-6">
-            <span class="branding-bar">Eventos</span>
-        <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-          {% for file in files['partys']['2018'] %}
-          <img src="{{ files_path['partys'] + '/2018/' + file }}"/>
-          {% endfor %}
-        </div>
-        </div>
-    </div>
-    <div data-role="panel" class="bg-dark fg-teal">
-    <div class="cell-md-6">
-        <span class="branding-bar">Doggy's</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in files['doggys']['2019'] %}
-      <img src="{{ files_path['doggys'] + '/2019/' + file }}"/>
-      {% endfor %}
-    </div>
-    </div>
-    </div>
-        <div data-role="panel" class="bg-dark fg-teal">
-        <div class="cell-md-6"><span class="branding-bar">Familia - 2015</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-          {% for file in files['family']['2015'] %}
-          <img src="{{ files_path['family'] + '/2015/' + file }}"/>
-          {% endfor %}
-    </div>
-    </div>
-        </div>
-        <div data-role="panel" class="bg-dark fg-teal">
-        <div class="cell-md-6">
-            <span class="branding-bar">Familia - 2017</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in files['family']['2017'] %}
-      <img src="{{ files_path['family'] + '/2017/' + file }}"/>
-      {% endfor %}
-    </div>
-    </div>
-        </div>
 </div>
 </div>
 {% endblock %}
