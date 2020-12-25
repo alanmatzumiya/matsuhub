@@ -123,26 +123,20 @@ class Server:
 
     def images(self):
         self.files = []
-        self.img_view = []
-        for j in range(min(len(self.images_files['family']['2003']),
-                           len(self.images_files['family']['2015']))-1):
-            self.files.append('../' + self.family_path + '/2003/' + self.images_files['family']['2003'][
-                randint(j, len(self.images_files['family']['2003']) - 1)])
-            self.files.append('../' + self.family_path + '/2015/' + self.images_files['family']['2015'][
-                randint(j, len(self.images_files['family']['2015']) - 1)])
 
-        for j in range(min(len(self.images_files['family']['2017']),
-                           len(self.images_files['doggys']['2019']),
-                           len(self.images_files['partys']['2018']))-1):
-            self.img_view.append('../' + self.family_path + '/2017/' + self.images_files['family']['2017'][
-                randint(j, len(self.images_files['family']['2017']) - 1)])
-            self.img_view.append('../' + self.doggys_path + '/2019/' + self.images_files['doggys']['2019'][
-                randint(j, len(self.images_files['doggys']['2019']) - 1)])
-            self.img_view.append('../' + self.partys_path + '/2018/' + self.images_files['partys']['2018'][
-                randint(j, len(self.images_files['partys']['2018']) - 1)])
+        for j in range(len(self.images_files['family']['2003'])):
+            self.files.append('../' + self.family_path + '/2003/' + self.images_files['family']['2003'][j])
+        for j in range(len(self.images_files['family']['2015'])):
+            self.files.append('../' + self.family_path + '/2015/' + self.images_files['family']['2015'][j])
+        for j in range(len(self.images_files['family']['2017'])):
+            self.files.append('../' + self.family_path + '/2017/' + self.images_files['family']['2017'][j])
+        for j in range(len(self.images_files['doggys']['2019'])):
+            self.files.append('../' + self.doggys_path + '/2019/' + self.images_files['doggys']['2019'][j])
+        for j in range(len(self.images_files['partys']['2018'])):
+            self.files.append('../' + self.partys_path + '/2018/' + self.images_files['partys']['2018'][j])
 
         return Response(render_template('images.html',
-                                        timer=self.timer, img_view=self.img_view, libs=self.path_back(self.LIBS),
+                                        timer=self.timer, libs=self.path_back(self.LIBS),
                                         files_path=self.path_back(self.IMAGES_PATH), files=self.files,
                                         routes=self.ROUTES, title='Images'), 200)
 
