@@ -65,11 +65,6 @@
             <div data-role="appbar" class="pos-absolute bg-darkTeal fg-white">
             <div class="app-bar-container w-100 ml-auto">
                 <div class="app-bar-container">
-                     <input data-role="timepicker"
-                            data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[1]}}"
-                            data-ok-button-icon="<span class='mif-checkmark'></span>"
-                            data-cancel-button-icon="<span class='mif-cross'></span>"
-                            class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
                     <a href="{{ routes['home'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
                         <span class="app-bar-name">Home</span>
                     </a>
@@ -88,7 +83,12 @@
                 </div>     
             </div>
             </div>
-        <div id="content-wrapper" class="content-inner w-100 h-100 bg-dark fg-teal" style="padding-top : 10%; overflow-y: auto;">
+        <div id="content-wrapper" class="content-inner w-100 h-100 bg-dark fg-teal" style="padding-top : 15%; overflow-y: auto;">
+           <input data-role="timepicker"
+           data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[1]}}"
+           data-ok-button-icon="<span class='mif-checkmark'></span>"
+           data-cancel-button-icon="<span class='mif-cross'></span>"
+           class="app-bar-container bg-darkTeal fg-white fg-darkTeal-hover bg-lightGray-hover">
         {% block content %}
         {% endblock %}
         </div>
