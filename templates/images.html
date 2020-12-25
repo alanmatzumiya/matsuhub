@@ -3,12 +3,7 @@
 {% block content %}
     <div class="card-content p-2 bg-white w-100 h-100" data-effect="image-set" data-role="tile" data-size="wide">
       {% for image in files %}
-      <img src="{{ image }}"/>
-      {% endfor %}
-    </div>
-    <div class="card-content p-2 bg-white w-100 h-100" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for file in img_view %}
-      <img src="{{ file }}"/>
+      <img width="100%" height="100%" src="{{ image }}"/>
       {% endfor %}
     </div>
 {% endblock %}
