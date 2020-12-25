@@ -30,23 +30,15 @@ class Server:
         self.PORT = self.SETTINGS['PORT']
 
         self.timer = datetime
-        family_path = self.IMAGES_PATH['family']
-        doggys_path = self.IMAGES_PATH['doggys']
-        partys_path = self.IMAGES_PATH['partys']
-        datas_dir = [os.listdir(family_path), os.listdir(doggys_path), os.listdir(partys_path)] 
+        self.family_path = self.IMAGES_PATH['family']
+        self.doggys_path = self.IMAGES_PATH['doggys']
+        self.partys_path = self.IMAGES_PATH['partys']
+        datas_dir = [os.listdir(self.family_path), os.listdir(self.doggys_path), os.listdir(self.partys_path)]
         self.images_files = { 'family' : {}, 'doggys' : {}, 'partys' : {} }
         
-        for j in range(len(datas_dir[0])): self.images_files['family'][datas_dir[0][j]] = os.listdir(family_path + '/' + datas_dir[0][j])
-        for j in range(len(datas_dir[1])): self.images_files['doggys'][datas_dir[1][j]] = os.listdir(doggys_path + '/' + datas_dir[1][j])
-        for j in range(len(datas_dir[2])): self.images_files['partys'][datas_dir[2][j]] = os.listdir(partys_path + '/' + datas_dir[2][j])
-
-        self.img_view = []
-        for j in range(3):
-            self.img_view.append('../' + family_path + '/2003/' + self.images_files['family']['2003'][randint(0, len(self.images_files['family']['2003'])-1)])
-            self.img_view.append('../' + family_path + '/2015/' + self.images_files['family']['2015'][randint(0, len(self.images_files['family']['2015'])-1)])
-            self.img_view.append('../' + family_path + '/2017/' + self.images_files['family']['2017'][randint(0, len(self.images_files['family']['2017'])-1)])
-            self.img_view.append('../' + doggys_path + '/2019/' + self.images_files['doggys']['2019'][randint(0, len(self.images_files['doggys']['2019'])-1)])
-            self.img_view.append('../' + partys_path + '/2018/' + self.images_files['partys']['2018'][randint(0, len(self.images_files['partys']['2018'])-1)])
+        for j in range(len(datas_dir[0])): self.images_files['family'][datas_dir[0][j]] = os.listdir(self.family_path + '/' + datas_dir[0][j])
+        for j in range(len(datas_dir[1])): self.images_files['doggys'][datas_dir[1][j]] = os.listdir(self.doggys_path + '/' + datas_dir[1][j])
+        for j in range(len(datas_dir[2])): self.images_files['partys'][datas_dir[2][j]] = os.listdir(self.partys_path + '/' + datas_dir[2][j])
         
     def usercheck(self, ID, KEY):
 
@@ -130,10 +122,26 @@ class Server:
                                         files=music_files, routes=self.ROUTES, title='Music'), 200)
 
     def images(self):
+        self.files = []
+        self.img_view = []
+
+        for j in range(6):
+            self.files.append('../' + self.family_path + '/2003/' + self.images_files['family']['2003'][
+                randint(0, len(self.images_files['family']['2003']) - 1)])
+            self.files.append('../' + self.family_path + '/2015/' + self.images_files['family']['2015'][
+                randint(0, len(self.images_files['family']['2015']) - 1)])
+
+        for j in range(6):
+            self.img_view.append('../' + self.family_path + '/2017/' + self.images_files['family']['2017'][
+                randint(0, len(self.images_files['family']['2017']) - 1)])
+            self.img_view.append('../' + self.doggys_path + '/2019/' + self.images_files['doggys']['2019'][
+                randint(0, len(self.images_files['doggys']['2019']) - 1)])
+            self.img_view.append('../' + self.partys_path + '/2018/' + self.images_files['partys']['2018'][
+                randint(0, len(self.images_files['partys']['2018']) - 1)])
 
         return Response(render_template('images.html',
                                         timer=self.timer, img_view=self.img_view, libs=self.path_back(self.LIBS),
-                                        files_path=self.path_back(self.IMAGES_PATH), files=self.images_files,
+                                        files_path=self.path_back(self.IMAGES_PATH), files=self.files,
                                         routes=self.ROUTES, title='Images'), 200)
 
     def documents(self):
