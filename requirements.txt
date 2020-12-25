@@ -6,12 +6,7 @@ chardet==3.0.4
 chart-studio==1.1.0
 chromedriver-install==1.0.3
 click==7.1.2
-dash==1.17.0
-dash-auth==1.4.1
-dash-core-components==1.13.0
-dash-html-components==1.1.1
-dash-renderer==1.8.3
-dash-table==4.11.0
+cycler==0.10.0
 fake-useragent==0.1.11
 filelock==3.0.12
 Flask==1.1.2
@@ -23,8 +18,12 @@ gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
+kiwisolver==1.3.1
+llvmlite==0.35.0
 MarkupSafe==1.1.1
-plotly==4.12.0
+Pillow==8.0.1
+pyparsing==2.4.7
+python-dateutil==2.8.1
 PyYAML==5.3.1
 requests==2.25.0
 requests-file==1.5.1
@@ -38,6 +37,5 @@ tldextract==3.1.0
 ua-parser==0.10.0
 update==0.0.1
 urllib3==1.26.2
-websockets==8.1
 Werkzeug==1.0.1
 youtube-dl==2020.12.5

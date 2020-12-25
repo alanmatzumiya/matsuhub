@@ -2,30 +2,24 @@ SETTINGS:
   HOST: https://matsuhub.herokuapp.com/
   PORT: 80
 
-SERVICES:
-  youtube_downloads:
-     assignature: "wait"
-  file_orders:
-     assignature: "wait"
-  nav_browsers:
-     assignature: "wait"
-
 LIBS:
-  css-route: "static/lib/metro/css"
-  js-route: "static/lib/metro/js"
   css: "static/lib/metro/css/metro-all.css"
   js: "static/lib/metro/js/metro.js"
   img: "static/lib/img"
+
+MUSIC-FILES: "static/home/music"
+
+DOCUMENTS-FILES: "static/home/documents"
+
+IMAGES-FILES:
+  family: "static/home/images/family"
+  doggys: "static/home/images/doggys"
+  partys: "static/home/images/partys"
    
 ROUTES:
   base: '/'
   login: '/login'
   home: '/home'
-  apps: '/apps'
   documents: '/home/documents'
   music: '/home/music'
-  images:
-    root: '/home/images'
-    family: '/home/images/family'
-    doggys: '/home/images/doggys'
-    partys: '/home/images/partys'
+  images: '/home/images'

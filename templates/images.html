@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="tiles-grid pl-2-md" style="margin-top: 2%;">
-    <div data-role="tile" data-size="wide"></div>
-    <div data-role="tile" data-size="wide"></div>
-    <div data-role="tile" data-size="wide"></div>
-    <div data-role="tile" data-size="wide"></div>
+<div class="cell-md-12 w-100">
+<div class="row">
+<div data-role="panel" class="mt-2 bg-dark fg-teal h-100">
+    <span class="branding-bar">Familia - 2003</span>
+<div class="cell-md-4">
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in files['family']['2003'][0:6] %}
+      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% endfor %}
+    </div>
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in files['family']['2003'][6:12] %}
+      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% endfor %}
+    </div>
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in files['family']['2003'][12:18] %}
+      <img src="{{ files_path['family'] + '/2003/' + file }}"/>
+      {% endfor %}
+    </div>
 </div>
+</div>
+
+<div class="mt-2 cell-md-8 card-container bg-dark fg-teal">
 <div data-role="carousel"
-     data-cls-controls="fg-cyan"
+     data-cls-controls="fg-darkTeal"
      data-cls-bullet="bullet-big"
      data-cls-bullet-on="bg-cyan drop-shadow"
      data-cls-slides="rounded"
@@ -17,12 +35,56 @@
      data-auto-start="true"
      data-period="3000"
      data-duration="1000"
-     data-controls-outside="true"
-     style="margin-top: 2%;">
-    <div id="slides">
-        {% for file in files['family']['2015'] %}
-        <div class="slide" data-cover="../static{{ routes['images']['family'] + '/2015/' + file }}"></div>
+     data-controls-outside="true" class="bg-dark">
+        {% for file in img_view %}
+        <div class="slide w-100 h-100" data-cover="{{ file }}"></div>
         {% endfor %}
+</div>
+</div>
+</div>
+</div>
+
+<div class="cell-md-24">
+    <div class="row">
+    <div data-role="panel" class="bg-dark fg-teal">
+        <div class="cell-md-6">
+            <span class="branding-bar">Eventos</span>
+        <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+          {% for file in files['partys']['2018'] %}
+          <img src="{{ files_path['partys'] + '/2018/' + file }}"/>
+          {% endfor %}
+        </div>
+        </div>
     </div>
+    <div data-role="panel" class="bg-dark fg-teal">
+    <div class="cell-md-6">
+        <span class="branding-bar">Doggy's</span>
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in files['doggys']['2019'] %}
+      <img src="{{ files_path['doggys'] + '/2019/' + file }}"/>
+      {% endfor %}
+    </div>
+    </div>
+    </div>
+        <div data-role="panel" class="bg-dark fg-teal">
+        <div class="cell-md-6"><span class="branding-bar">Familia - 2015</span>
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+          {% for file in files['family']['2015'] %}
+          <img src="{{ files_path['family'] + '/2015/' + file }}"/>
+          {% endfor %}
+    </div>
+    </div>
+        </div>
+        <div data-role="panel" class="bg-dark fg-teal">
+        <div class="cell-md-6">
+            <span class="branding-bar">Familia - 2017</span>
+    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in files['family']['2017'] %}
+      <img src="{{ files_path['family'] + '/2017/' + file }}"/>
+      {% endfor %}
+    </div>
+    </div>
+        </div>
+</div>
 </div>
 {% endblock %}

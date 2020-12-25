@@ -3,7 +3,9 @@ import youtube_dl
 from time import sleep
 import yaml
 
-while True:
+'''''
+def worker():
+    while True:
     workers_file = open('id_workers.yml')
     workers_dict = yaml.load(workers_file, Loader=yaml.FullLoader)
 
@@ -22,3 +24,14 @@ while True:
     ydl_opts = {}
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         ydl.download([signal])
+'''''
+
+
+def YouTubeDown(url):
+    print(url)
+    ydl_opts = {}
+
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+

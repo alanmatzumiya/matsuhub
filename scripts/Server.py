@@ -1,10 +1,10 @@
-import subprocess
 import os
-import json
 from random import randint
-from flask import render_template, request, jsonify, redirect, url_for, Response
-from werkzeug.utils import secure_filename
+from flask import render_template, request, redirect, url_for, Response
 import yaml
+from . import botDriver
+from . import api_YouTube
+from datetime import datetime
 
 
 class Server:
@@ -12,25 +12,45 @@ class Server:
 
     """
 
-    def __init__(self):
+    def __init__(self, app):
         config_path = './scripts/_config.yml' 
         config_file = open(config_path)
         config_dict = yaml.load(config_file, Loader=yaml.FullLoader)
-
+        
+        self.app = app
         self.SETTINGS = config_dict['SETTINGS']
-        self.SERVICES = config_dict['SERVICES']
         self.LIBS = config_dict['LIBS']
+        self.IMAGES_PATH = config_dict['IMAGES-FILES']
+        self.MUSIC_PATH = config_dict['MUSIC-FILES']
+        self.DOCUMENTS_PATH = config_dict['DOCUMENTS-FILES']
         self.ROUTES = config_dict['ROUTES']
 
-        self.active_logging = False
-
+        self.active_logging = True
         self.HOST = self.SETTINGS['HOST']
         self.PORT = self.SETTINGS['PORT']
 
+        self.timer = datetime
+        family_path = self.IMAGES_PATH['family']
+        doggys_path = self.IMAGES_PATH['doggys']
+        partys_path = self.IMAGES_PATH['partys']
+        datas_dir = [os.listdir(family_path), os.listdir(doggys_path), os.listdir(partys_path)] 
+        self.images_files = { 'family' : {}, 'doggys' : {}, 'partys' : {} }
+        
+        for j in range(len(datas_dir[0])): self.images_files['family'][datas_dir[0][j]] = os.listdir(family_path + '/' + datas_dir[0][j])
+        for j in range(len(datas_dir[1])): self.images_files['doggys'][datas_dir[1][j]] = os.listdir(doggys_path + '/' + datas_dir[1][j])
+        for j in range(len(datas_dir[2])): self.images_files['partys'][datas_dir[2][j]] = os.listdir(partys_path + '/' + datas_dir[2][j])
+
+        self.img_view = []
+        for j in range(6):
+            self.img_view.append('../' + family_path + '/2003/' + self.images_files['family']['2003'][randint(0, len(self.images_files['family']['2003'])-1)])
+            self.img_view.append('../' + family_path + '/2015/' + self.images_files['family']['2015'][randint(0, len(self.images_files['family']['2015'])-1)])
+            self.img_view.append('../' + family_path + '/2017/' + self.images_files['family']['2017'][randint(0, len(self.images_files['family']['2017'])-1)])
+            self.img_view.append('../' + doggys_path + '/2019/' + self.images_files['doggys']['2019'][randint(0, len(self.images_files['doggys']['2019'])-1)])
+            self.img_view.append('../' + partys_path + '/2018/' + self.images_files['partys']['2018'][randint(0, len(self.images_files['partys']['2018'])-1)])
+        
     def usercheck(self, ID, KEY):
 
         secrete_path = './scripts/DATABASE/secrets.yml'
-
         secrete_file = open(secrete_path)
         secrete_dict = yaml.load(secrete_file, Loader=yaml.FullLoader)
 
@@ -44,8 +64,29 @@ class Server:
                 return False
         else:
             return False
+    
+    def error404(self):
 
+        return Response(render_template('404.html', libs=self.LIBS), 404)
+        
+    @staticmethod
+    def path_back(libs):
 
+        names = list(libs.keys())
+        for name in names:
+            libs[name] = '../' + libs[name]
+        return libs
+        
+    def ytDown(self):
+
+        song = request.args.get("song")
+        url = botDriver.driverTube(str(song))
+        api_YouTube.YouTubeDown(url)
+
+        os.system('mv *.mp4 ./static/home/music')
+
+        return redirect(url_for('music'))
+        
     def base(self):
         if self.active_logging:
             return redirect('home')
@@ -72,72 +113,31 @@ class Server:
         if self.active_logging:
 
             return Response(
-                render_template("index.html", libs=self.LIBS, routes=self.ROUTES, title='Home'), 200)
+                render_template("index.html", timer=self.timer, libs=self.LIBS,
+                                routes=self.ROUTES, title='Home'), 200)
         else:
             return redirect('login')
 
-    def apps(self):
-
-
-        return Response(render_template("apps.html", libs=self.LIBS, routes=self.ROUTES, title='Apps'), 200)
-
     def music(self):
-        music_list_path = './scripts/DATABASE/music.yml'
-        music_file = open(music_list_path)
-        music_dict = yaml.load(music_file, Loader=yaml.FullLoader)
 
-        self.VIDEO_LIST = music_dict['music']
-        LIBS = {'css': '../' + self.LIBS['css'], 'js': '../' + self.LIBS['js'], 'img': '../' + self.LIBS['img']}
-
-        return Response(render_template('music.html', libs=LIBS, routes=self.ROUTES, files=self.VIDEO_LIST, title='Music'), 200)
+        music_files = os.listdir(self.MUSIC_PATH)
+        if request.args.get('song_play') == None:
+            song_play = music_files[randint(0, len(music_files)-1)]
+        else:
+            song_play = request.args.get("song_play")
+        return Response(render_template('music.html', timer=self.timer, song_play=song_play,
+                                        libs=self.path_back(self.LIBS), files_path='../' + self.MUSIC_PATH,
+                                        files=music_files, routes=self.ROUTES, title='Music'), 200)
 
     def images(self):
 
-        images_list_path = './scripts/DATABASE/images.yml'
-        images_file = open(images_list_path)
-        self.IMAGES_LIST = yaml.load(images_file, Loader=yaml.FullLoader)
-
-        LIBS = {'css': '../' + self.LIBS['css'], 'js': '../' + self.LIBS['js'], 'img': '../' + self.LIBS['img']}
-
-        return Response(render_template('images.html', libs=LIBS, files=self.IMAGES_LIST, routes=self.ROUTES, title='Images'), 200)
-
+        return Response(render_template('images.html',
+                                        timer=self.timer, img_view=self.img_view, libs=self.path_back(self.LIBS),
+                                        files_path=self.path_back(self.IMAGES_PATH), files=self.images_files,
+                                        routes=self.ROUTES, title='Images'), 200)
 
     def documents(self):
-        docs_list_path = './scripts/DATABASE/documents.yml'
-        docs_file = open(docs_list_path)
-        self.DOCS_LIST = yaml.load(docs_file, Loader=yaml.FullLoader)
-
-        LIBS = {'css': '../' + self.LIBS['css'], 'js': '../' + self.LIBS['js'], 'img': '../' + self.LIBS['img']}
-        return Response(render_template("documents.html", libs=LIBS, files=self.DOCS_LIST, routes=self.ROUTES, title='Documents'), 200)
-
-    def app_service(self, service):
-
-         if service == "upload":
-            if request.method == 'POST':
-                # obtenemos el archivo del input "archivo"
-                f = request.files['archivo']
-                filename = secure_filename(f.filename)
-                # Guardamos el archivo en el directorio "Archivos PDF"
-                f.save(os.path.join(self.settings['UPLOADS_FOLDER'], filename))
-            # Retornamos una respuesta satisfactoria
-            return redirect(url_for('home'))
-
-         elif service == "response":
-         # Retrieve the name from url parameter
-            dict_script = request.args.get("code")
-
-            response = {}
-
-            # Check if user sent a name at all
-            if not dict_script:
-                response["ERROR"] = "no name found, please send a script."
-            # Check if the user entered a number not a name
-            elif str(dict_script).isdigit():
-                response["ERROR"] = "code can't be numeric."
-            # Now the user entered a valid name
-            else:
-                response["result"] = dict_script
-                file_name = self.settings['SCRIPTS_FOLDER'] + "/result.json"
-                #self.save_file(response, file_name)
-            # Return the response in json format
-            return redirect(url_for('index'))
+        documents_files = os.listdir(self.DOCUMENTS_PATH)
+        return Response(render_template("documents.html", timer=self.timer, libs=self.path_back(self.LIBS),
+                                        files_path='../'+self.DOCUMENTS_PATH, files=documents_files,
+                                        routes=self.ROUTES, title='Documents'), 200)

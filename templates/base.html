@@ -1,83 +1,99 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en" class=" scrollbar-type-1 sb-cyan">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ libs['css'] }}" rel="stylesheet">
-    <link rel="icon" href="{{ libs['img'] + '/favicon.ico' }}">
-    <title>{{ title }}</title>
-  </head>
-  <body data-role="gradient-box"
-        data-gradient-type="radial"
-        data-gradient-size="farthest-corner"
-        data-gradient-position="40px 40px"
-        data-gradient-colors="#f35 0%, #43e 100%">
-  <header>
-  <h2 class="header pl-4-md pr-4-md fg-lightGray float-left">MATSUHUB</h2>
-  <input class="fg-lightGray pl-4-md pr-4-md float-right" type="checkbox" data-role="switch" data-caption="Light mode">
-  </header>
-  <div class="fg-cyan" data-role="navview" data-compact="md" data-expand="lg" data-toggle="#pane-toggle" data-active-state="true">
-    <nav class="navview-pane bg-dark">
-    <button class="pull-button fg-cyan">
-    <span class="mif-menu"></span>
-    </button>
-        <div class="suggest-box">
-            <input class="bg-lightGray" type="text" data-role="input" data-clear-button="false" data-search-button="true">
-            <button class="holder">
-                <span class="mif-search fg-cyan"></span>
-            </button>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ libs['css'] }}">
+    <link rel="shortcut icon" href="{{ libs['img'] + '/favicon.ico' }}" type="image/x-icon">
+    <link rel="icon" href="{{ libs['img'] + '/favicon.ico' }}" type="image/x-icon">
+    <title>MatsuHub | {{title}}</title>
+</head>
+
+<body class="m4-cloak h-vh-100 bg-dark fg-teal">
+<div class="bg-dark fg-teal" data-role="navview" data-toggle="#paneToggle" data-expand="xl" data-compact="lg" data-active-state="true">
+    <div class="navview-pane bg-dark fg-teal">
+        <div class="bg-dark fg-teal d-flex flex-align-center">
+            <button class="pull-button m-0 bg-lightGray-hover"><span class="mif-menu fg-teal"></span></button>
         </div>
-        <ul class="navview-menu bg-dark">
-            <li class="active">
-                <a href="{{routes['home']}}">
-                    <span class="icon"><span class="mif-home"></span></span>
+        <div class="suggest-box">
+            <input type="text" data-role="input" data-clear-button="false" data-search-button="true">
+            <button class="holder"><span class="mif-search fg-teal"></span></button>
+        </div>
+        <a href="{{ routes['home'] }}" style="width : 100%;" class="data-box text-left no-decor bg-lightGray-hover">
+            <h2 class="text-light m-4 fg-teal">MatsuHub</h2>
+        </a>
+        <ul class="navview-menu mt-4 bg-dark fg-teal" id="side-menu">
+            <li>
+                <a href="{{ routes['home'] }}">
+                    <span class="icon"><span class="mif-meter"></span></span>
                     <span class="caption">Home</span>
                 </a>
             </li>
-            <li class="item-separator"></li>
-            <li class="item-header">Main pages</li>
-            <li><a href="{{routes['apps']}}">
-                <span class="icon"><span class="mif-apps"></span></span>
-                <span class="caption">Apps</span>
-            </a>
-            </li>
             <li>
                 <a href="#" class="dropdown-toggle">
-                    <span class="icon"><span class="mif-rocket"></span></span>
+                    <span class="icon"><span class="mif-versions"></span></span>
                     <span class="caption">Media</span>
                 </a>
-                <ul class="navview-menu" data-role="dropdown">
-                    <li>
-                        <a href="{{routes['images']['root']}}">
-                            <span class="icon"><span class="mif-images"></span></span>
-                            <span class="caption">Fotos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{routes['music']}}">
-                            <span class="icon"><span class="mif-film"></span></span>
-                            <span class="caption">Musica</span>
-                        </a>
-                    </li>
+                <ul class="navview-menu stay-open" data-role="dropdown">
+                    <li class="item-header">Media</li>
+                    <li><a href="{{ routes['music'] }}">
+                        <span class="icon"><span class="mif-lock"></span></span>
+                        <span class="caption">Music</span>
+                    </a></li>
+                    <li><a href="{{ routes['images'] }}">
+                        <span class="icon"><span class="mif-user-plus"></span></span>
+                        <span class="caption">Gallery</span>
+                    </a></li>
+                    <li><a href="{{ routes['documents'] }}">
+                        <span class="icon"><span class="mif-key"></span></span>
+                        <span class="caption">Documents</span>
+                    </a></li>
                 </ul>
-            </li>
-            <li class="item-separator"></li>
-            <li>
-                <a href="{{routes['documents']}}">
-                    <span class="icon"><span class="mif-folder"></span></span>
-                    <span class="caption">Documentos</span>
-                </a>
-            </li>
         </ul>
-    </nav>
-      <div class="navview-content pl-4-md pr-4-md bg-dark fg-lightGray">
-          <div data-role="row" data-expand="lg">
-              <input class="bg-lightGray fg-dark" data-role="timepicker" data-value="13:01:23" data-ok-button-icon="<span class='mif-checkmark'></span>" data-cancel-button-icon="<span class='mif-cross'></span>">
-          </div>
-          {% block content %} {% endblock %}
-      </div>
+         <div class="w-100 text-center text-small data-box p-2 border-top bd-grayMouse" style="position: absolute; bottom: 0">
+             &copy; 2020<a href="https://circuitalminds.github.io/"><span class="caption fg-teal">CircuitalMinds</span>
+             <span class="icon"><img src="{{ libs['img'] + '/logo.png' }}"></span></a>
+        <input data-role="datepicker"
+               data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[0]}}"
+               data-ok-button-icon="<span class='mif-checkmark'></span>"
+               data-cancel-button-icon="<span class='mif-cross'></span>"
+               style="position: absolute;" class="bg-dark fg-teal">
+         </div>
+    </div>
+
+ <div class="navview-content h-100">
+            <div data-role="appbar" class="pos-absolute bg-darkTeal fg-white">
+                <input data-role="timepicker"
+                       data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[1]}}"
+                       data-ok-button-icon="<span class='mif-checkmark'></span>"
+                       data-cancel-button-icon="<span class='mif-cross'></span>"
+                       class="bg-dark fg-teal bg-lightGray-hover">
+            <div class="mt-1 app-bar-container ml-auto">
+                <div class="app-bar-container">
+                    <a href="{{ routes['home'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                        <span class="app-bar-name">Home</span>
+                    </a>
+                    <a href="{{ routes['images'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                        <span class="app-bar-name">Gallery</span>
+                    </a>
+                    <a href="{{ routes['music'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                        <span class="app-bar-name">Music</span>
+                    </a>
+                    <a href="{{ routes['documents'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                        <span class="app-bar-name">Documents</span>
+                    </a>
+                </div>
+                <a href="#" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                    <span class="mif-cogs"></span>
+                </a>
+            </div>
+            </div>
+        <div id="content-wrapper" class="content-inner w-100 h-100 bg-dark fg-teal" style="padding-top : 10%; overflow-y: auto;">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </div>
 </div>
-  <script src="{{ libs['js'] }}"></script>
+<script src="{{ libs['js'] }}"></script>
 </body>
 </html>
