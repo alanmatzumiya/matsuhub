@@ -63,13 +63,13 @@
 
  <div class="navview-content h-100">
             <div data-role="appbar" class="pos-absolute bg-darkTeal fg-white">
-                <input data-role="timepicker"
-                       data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[1]}}"
-                       data-ok-button-icon="<span class='mif-checkmark'></span>"
-                       data-cancel-button-icon="<span class='mif-cross'></span>"
-                       class="bg-dark fg-teal bg-lightGray-hover">
-            <div class="mt-1 app-bar-container ml-auto">
+            <div class="app-bar-container w-100 ml-auto">
                 <div class="app-bar-container">
+                     <input data-role="timepicker"
+                            data-value="{{timer.now().strftime('%d-%m-%Y %H:%M:%S').split(' ')[1]}}"
+                            data-ok-button-icon="<span class='mif-checkmark'></span>"
+                            data-cancel-button-icon="<span class='mif-cross'></span>"
+                            class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
                     <a href="{{ routes['home'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
                         <span class="app-bar-name">Home</span>
                     </a>
@@ -82,10 +82,10 @@
                     <a href="{{ routes['documents'] }}" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
                         <span class="app-bar-name">Documents</span>
                     </a>
-                </div>
-                <a href="#" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
-                    <span class="mif-cogs"></span>
-                </a>
+                    <a href="#" class="app-bar-item fg-darkTeal-hover bg-lightGray-hover">
+                        <span class="mif-cogs"></span>
+                    </a>
+                </div>     
             </div>
             </div>
         <div id="content-wrapper" class="content-inner w-100 h-100 bg-dark fg-teal" style="padding-top : 10%; overflow-y: auto;">
