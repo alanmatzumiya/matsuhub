@@ -41,7 +41,7 @@ class Server:
         for j in range(len(datas_dir[2])): self.images_files['partys'][datas_dir[2][j]] = os.listdir(partys_path + '/' + datas_dir[2][j])
 
         self.img_view = []
-        for j in range(6):
+        for j in range(3):
             self.img_view.append('../' + family_path + '/2003/' + self.images_files['family']['2003'][randint(0, len(self.images_files['family']['2003'])-1)])
             self.img_view.append('../' + family_path + '/2015/' + self.images_files['family']['2015'][randint(0, len(self.images_files['family']['2015'])-1)])
             self.img_view.append('../' + family_path + '/2017/' + self.images_files['family']['2017'][randint(0, len(self.images_files['family']['2017'])-1)])
