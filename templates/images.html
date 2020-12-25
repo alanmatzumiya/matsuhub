@@ -1,59 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="cell-md-12 w-100">
-<div class="row">
-<div data-role="panel" class="mt-2 bg-dark fg-teal h-100">
-<div class="cell-md-4">
-    <span class="branding-bar">Familia</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for j in range(5) %}
-      <img src="{{ files_path['family'] + '/2003/' + files['family']['2003'][j] }}"/>
-      <img src="{{ files_path['family'] + '/2003/' + files['family']['2003'][j+1] }}"/>
-      <img src="{{ files_path['family'] + '/2015/' + files['family']['2015'][j] }}"/>
-      <img src="{{ files_path['family'] + '/2015/' + files['family']['2015'][j+1] }}"/>
-      <img src="{{ files_path['family'] + '/2017/' + files['family']['2017'][j] }}"/>
+    <div class="card-content p-2 bg-white w-100 h-100" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for image in files %}
+      <img src="{{ image }}"/>
       {% endfor %}
     </div>
-    <span class="branding-bar">Doggy's</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for k in range(5) %}
-      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k] }}"/>
-      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+1] }}"/>
-      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+2] }}"/>
-      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+3] }}"/>
-      <img src="{{ files_path['doggys'] + '/2019/' + files['doggys']['2019'][k+4] }}"/>
+    <div class="card-content p-2 bg-white w-100 h-100" data-effect="image-set" data-role="tile" data-size="wide">
+      {% for file in img_view %}
+      <img src="{{ file }}"/>
       {% endfor %}
     </div>
-    <span class="branding-bar">Eventos</span>
-    <div class="card-content p-2 bg-white" data-effect="image-set" data-role="tile" data-size="wide">
-      {% for l in range(5) %}
-      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l] }}"/>
-      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+1] }}"/>
-      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+2] }}"/>
-      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+3] }}"/>
-      <img src="{{ files_path['partys'] + '/2018/' + files['partys']['2018'][l+4] }}"/>
-      {% endfor %}
-    </div>
-</div>
-</div>
-<div class="mt-2 cell-md-8 card-container bg-dark fg-teal">
-<div data-role="carousel"
-     data-cls-controls="fg-darkTeal"
-     data-cls-bullet="bullet-big"
-     data-cls-bullet-on="bg-cyan drop-shadow"
-     data-cls-slides="rounded"
-     data-control-next="<span class='mif-arrow-right'></span>"
-     data-control-prev="<span class='mif-arrow-left'></span>"
-     data-auto-start="true"
-     data-period="3000"
-     data-duration="1000"
-     data-controls-outside="true" class="bg-dark">
-        {% for file in img_view %}
-        <div class="slide w-100 h-100" data-cover="{{ file }}"></div>
-        {% endfor %}
-</div>
-</div>
-</div>
-</div>
 {% endblock %}
