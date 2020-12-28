@@ -7,15 +7,6 @@ LIBS:
   js: "static/lib/metro/js/metro.js"
   img: "static/lib/img"
 
-MUSIC-FILES: "static/home/music"
-
-DOCUMENTS-FILES: "static/home/documents"
-
-IMAGES-FILES:
-  family: "static/home/images/family"
-  doggys: "static/home/images/doggys"
-  partys: "static/home/images/partys"
-   
 ROUTES:
   base: '/'
   login: '/login'

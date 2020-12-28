@@ -19,7 +19,8 @@
                data-volume-high-icon="<span class='mif-volume-high fg-cyan'></span>"
                data-play-icon="<img src={{ libs['img'] + '/images/play-icon.png' }}>"
                data-stop-icon="<img src={{ libs['img'] + '/images/player_stop.png' }}>"
-               data-src="../static/home/music/{{ song_play }}">
+               data-src="{{ files_dict[song_play] }}"
+               data-on-end="songChange('{{files_dict[song_play]}}', '{{song_play.replace('.mp4', '')}}');">
             </video>
         </div>
     <div class="bg-dark p-4 h-100">
@@ -54,7 +55,7 @@
             <tbody>
             {% for file in files %}
             <tr>
-                <td><form action="{{ routes['music'] }}" method="GET">
+                <td><form id="listSong" action="{{ routes['music'] }}" method="GET">
                     <p>
                         <input type="submit"
                               style="border: 5px solid gray; margin: 0; padding: 10px; width: 100%; height: 100%;"
@@ -71,5 +72,13 @@
     </div>
     </div>
 </div>
+<script>
+    function songChange(el, song){
+        var nextSong = document.getElementById('play-media');
+        document.getElementById('play-song').innerHTML = song;
+        nextSong.setAttribute("src", el);
+        nextSong.play();
+    }
+</script>
 {% endblock %}
 

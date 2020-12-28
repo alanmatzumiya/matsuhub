@@ -1,7 +1,0 @@
-workers:
-  youtube_downloads:
-     assignature: "wait"
-  file_orders:
-     assignature: "wait"
-  nav_browsers:
-     assignature: "wait"
